@@ -1,3 +1,4 @@
+test: git reset HEAD filename
 this test file for github.com
 fivezh.20120330
 
