@@ -59,7 +59,7 @@ void *fun_picInfor(void *data)
 	int ret_val;
 	ret_val= pthread_detach(pthread_self());//detach style thread
   if (ret_val != 0) {
-    printf("pthread_join error!\n");
+    printf("pthread_detach error!\n");
   }
   picStruct *pdata;
 	pdata = (picStruct *)data;
@@ -157,20 +157,6 @@ void *findPicDataArrayPos(picStruct picDataArray[], int node)
 }
 /**
 * 主函数，读入数据分配至不同线程处理
-typedef struct onePktData
-{
-	int pktId;
-	int received;
-	int dataMeta;
-}onePktData,*pOnePktData;
-
-typedef struct picStruct
-{
-	int using;
-	int count;//total count of all pkt
-	int nodeid;
-	onePktData *data;
-}picStruct,*pPicStruct;
 **/
 int main(int argc, char const *argv[])
 {
